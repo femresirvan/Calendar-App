@@ -1,0 +1,34 @@
+Bu dosyada tamamen bana ait kod parçaları vardır lazım olursa diye tutuyorum.
+
+passport.js
+old passport local
+
+const passport = require('passport');
+const { Strategy: LocalStrategy } = require('passport-local');
+const User = require('../models/user');
+
+passport.use(
+  new LocalStrategy(async (username, password, done) => {
+    try {
+      const result = await User.findOne({ username });
+      if (!result) {
+        return done(null, false, { message: 'Incorrect username or password.' });
+      }
+      User.comparePassword(password, (err, isMatch) => {
+        if (err) {
+          return done(err);
+        }
+        if (isMatch) {
+          return done(null, User);
+        }
+        return done(null, false, {
+          msg: 'Invalid email or password.',
+        });
+      });
+    } catch (err) {
+      return done(err);
+    }
+  })
+);
+
+----------------------------

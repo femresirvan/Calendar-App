@@ -6,7 +6,6 @@ const logger = require("morgan");
 const chalk = require("chalk");
 const dotenv = require("dotenv");
 const helmet = require("helmet");
-const passport = require("passport");
 const router = require("./routers/router");
 
 /**
@@ -15,12 +14,6 @@ const router = require("./routers/router");
 dotenv.config({
   path: ".env",
 });
-
-/**
- * Pass the global passport object into the configuration function
- */
-
-require("./middlewares/passport")(passport);
 
 /**
  * Mongoose Database Connection
@@ -37,7 +30,6 @@ app.use(cors());
  * Express configuration.
  */
 // #region EXPRESS CONF
-app.use(passport.initialize());
 app.set("host", process.env.OPENSHIFT_NODEJS_IP || "0.0.0.0");
 app.set("port", process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 3000);
 app.set("views", path.join(__dirname, "views"));
@@ -71,7 +63,7 @@ app.use((err, req, res, next) => {
 const server = http.createServer(app);
 server.listen(app.get("port"), () => {
   console.log(
-    "%s Account Serice is running at http://localhost:%d",
+    "%s Calendar Service is running at http://localhost:%d",
     chalk.green("✓"),
     app.get("port")
   );

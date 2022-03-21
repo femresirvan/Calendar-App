@@ -1,18 +1,18 @@
-const path = require("path");
-const cors = require("cors");
-const http = require("http");
-const express = require("express");
-const logger = require("morgan");
-const chalk = require("chalk");
-const dotenv = require("dotenv");
-const helmet = require("helmet");
-const router = require("./routers/router");
+const path = require('path');
+const cors = require('cors');
+const http = require('http');
+const express = require('express');
+const logger = require('morgan');
+const chalk = require('chalk');
+const dotenv = require('dotenv');
+const helmet = require('helmet');
+const router = require('./routers/router');
 
 /**
  * Load environment variables from .env file, where API keys and passwords are configured.
  */
 dotenv.config({
-  path: ".env",
+  path: '.env',
 });
 
 /**
@@ -25,13 +25,13 @@ app.use(cors());
  * Express configuration.
  */
 // #region EXPRESS CONF
-app.set("host", process.env.OPENSHIFT_NODEJS_IP || "0.0.0.0");
-app.set("port", process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 3000);
-app.use(logger("dev"));
+app.set('host', process.env.OPENSHIFT_NODEJS_IP || '0.0.0.0');
+app.set('port', process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 3000);
+app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 // #endregion
-app.use("/", router);
+app.use('/', router);
 
 /**
  * Error Handler.
@@ -39,7 +39,7 @@ app.use("/", router);
 
 app.use((err, req, res, next) => {
   res.status(err.status || 500).json({
-    msg: err.msg || "Unexpected err",
+    msg: err.msg || 'Unexpected err',
     success: false,
     status: err.status || 500,
   });
@@ -49,11 +49,11 @@ app.use((err, req, res, next) => {
  * Start Express server.
  */
 const server = http.createServer(app);
-server.listen(app.get("port"), () => {
+server.listen(app.get('port'), () => {
   console.log(
-    "%s Web API Service is running at http://localhost:%d",
-    chalk.green("✓"),
-    app.get("port")
+    '%s Web API Service is running at http://localhost:%d',
+    chalk.green('✓'),
+    app.get('port')
   );
-  console.log(chalk.magentaBright("  Press CTRL-C to stop"));
+  console.log(chalk.magentaBright('  Press CTRL-C to stop'));
 });

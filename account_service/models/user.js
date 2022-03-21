@@ -14,14 +14,7 @@ const userSchema = new Schema({
     required: true,
   },
   password: { type: String, trim: true },
-  events: [
-    {
-      desc: { min: 6, max: 200, type: String, trim: true },
-      date_year: { type: Number, index: true },
-      date_day: { type: Number, index: true },
-      date_month: { type: Number, index: true },
-    },
-  ],
+  events: [],
 });
 
 /**

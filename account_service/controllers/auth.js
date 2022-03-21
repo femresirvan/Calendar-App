@@ -54,7 +54,12 @@ const getUser = (req, res, next) => {
   res.status(200).json({
     success: true,
     msg: "You are successfully get your user informations!",
-    user: req.user,
+    user: {
+      _id: req.user._id,
+      name: req.user.name,
+      username: req.user.username,
+      password: req.user.password,
+    },
   });
 };
 

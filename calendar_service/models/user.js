@@ -1,5 +1,5 @@
-const mongoose = require("mongoose");
-const bcrypt = require("bcrypt");
+const mongoose = require('mongoose');
+const bcrypt = require('bcrypt');
 
 const { Schema } = mongoose;
 
@@ -21,9 +21,9 @@ const userSchema = new Schema({
  * Password hash middleware.
  */
 
-userSchema.pre("save", function save(next) {
+userSchema.pre('save', function save(next) {
   const user = this;
-  if (!user.isModified("password")) {
+  if (!user.isModified('password')) {
     return next();
   }
   bcrypt.genSalt(10, (err, salt) => {
@@ -45,15 +45,12 @@ userSchema.pre("save", function save(next) {
 /**
  * Helper method for validating user's password.
  */
-userSchema.methods.comparePassword = function comparePassword(
-  candidatePassword,
-  cb
-) {
+userSchema.methods.comparePassword = function comparePassword(candidatePassword, cb) {
   bcrypt.compare(candidatePassword, this.password, (err, isMatch) => {
     cb(err, isMatch);
   });
 };
 
-const userModel = mongoose.model("User", userSchema);
+const userModel = mongoose.model('User', userSchema);
 
 module.exports = userModel;

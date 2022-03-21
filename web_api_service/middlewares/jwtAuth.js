@@ -1,8 +1,5 @@
 const axios = require("axios");
 
-/**
- * TODO
- */
 const isAuthenticated = (req, res, next) => {
   axios
     .get("http://localhost:3000/api/users/me", {

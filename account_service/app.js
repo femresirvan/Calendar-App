@@ -40,13 +40,6 @@ app.use(cors());
 app.use(passport.initialize());
 app.set("host", process.env.OPENSHIFT_NODEJS_IP || "0.0.0.0");
 app.set("port", process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 3000);
-app.set("views", path.join(__dirname, "views"));
-app.set("layouts", path.join(__dirname, "views/layouts"));
-app.set("/uploads", express.static(path.join(__dirname, "uploads")));
-app.set("view engine", "ejs");
-app.use("/public", express.static(path.join(__dirname, "public")));
-// If you want to code with bootstrap then enable it. I do not recommend that. Use Webpack.
-// app.use('/bootstrap', express.static(path.join(__dirname, '/node_modules/bootstrap/dist')));
 app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));

@@ -10,17 +10,17 @@ const login = async (req, res, next) => {
 
       user.comparePassword(req.body.password, (err, isMatch) => {
         if (err) {
-          next(err);
+          return next(err);
         }
         if (isMatch) {
           const tokenObject = issueJWT(user);
-          res.status(200).json({
+          return res.status(200).json({
             success: true,
             token: tokenObject.token,
             expiresIn: tokenObject.expires,
           });
         }
-        next({ status: 401, msg: "you entered the wrong password" });
+        return next({ status: 401, msg: "you entered the wrong password" });
       });
     })
     .catch((err) => {
@@ -37,7 +37,7 @@ const register = async (req, res, next) => {
     });
     const result = await user.save();
     if (!result)
-      next({ status: 404, msg: "Username or password are incorrect." });
+      return next({ status: 404, msg: "Username or password are incorrect." });
     const tokenObject = issueJWT(user);
     res.status(200).json({
       success: true,

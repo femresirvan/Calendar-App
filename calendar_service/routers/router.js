@@ -4,9 +4,9 @@ const event = require('../controllers/event');
 const router = express.Router();
 
 router.post('/api/users/:userId/events', event.createEvent);
-router.get('/api/users/:userId/events/:eventId', event.getEvents);
-router.put('/api/users/:userId/events/:eventId', event.deleteEvent);
-router.delete('/api/users/:userId/events/:eventId', event.updateEvent);
+router.get('/api/users/:userId/events/:eventId?', event.getEvents);
+router.delete('/api/users/:userId/events/:eventId?', event.deleteEvent);
+router.put('/api/users/:userId/events/:eventId?', event.updateEvent);
 
 module.exports = router;
 

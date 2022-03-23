@@ -1,0 +1,33 @@
+$primary-color: #364986;
+$primary-color-light: #a5b0d6;
+$secondary-color: #fff;
+$background: linear-gradient(90deg, rgba(54,73,134,1) 0%, rgba(76,94,154,1) 100%);;
+
+$primary-text-color: #364986;
+$secondary-text-color: #2c2c2c;
+$light-text-color: #a8a8a8;
+
+$display: 50px;
+$h1: 30px;
+$h2: 25px;
+$h3: 20px;
+$p: 14px;
+
+@import './login.scss';
+
+body{
+    background: $background;
+    color: $secondary-text-color;
+}
+
+.hero{
+    min-height: 99vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-break{
+    flex-basis: 100%;
+}
+

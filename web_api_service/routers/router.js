@@ -10,7 +10,6 @@ const router = express.Router();
  */
 
 router.post('/api/events', isAuthenticated, event.createEvent);
-router.get('/api/temporary', isAuthenticated, event.temporaryController);
 router.get('/api/events', isAuthenticated, event.getEvents);
 router.delete('/api/events/:eventId', isAuthenticated, event.deleteEvent);
 router.put('/api/events', isAuthenticated, event.updateEvent);
@@ -21,5 +20,6 @@ router.put('/api/events', isAuthenticated, event.updateEvent);
 
 router.post('/auth/login', user.login);
 router.post('/auth/register', user.register);
+router.get('/auth/get-user', isAuthenticated, event.temporaryController);
 
 module.exports = router;

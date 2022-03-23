@@ -1,7 +1,9 @@
 import { useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const login = () => {
+  const navigate = useNavigate();
   // const userRef = useRef();
   // const errRef = useRef();
 
@@ -37,6 +39,9 @@ const login = () => {
           name: response.data.name,
         }));
         console.log(response);
+        // return <Navigate to="/calendar" />;
+
+        navigate("/calendar");
       })
       .catch((err) => {
         console.log(err);

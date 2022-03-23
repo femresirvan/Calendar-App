@@ -1,11 +1,19 @@
-import "./App.css";
 import Login from "./components/login";
+import "./styles/app.scss";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Calendar from "./components/calendar";
 
 function App() {
   return (
-    <div className="hero">
-      <Login className="login-wrapper" />
-    </div>
+    <Router>
+      <div className="hero">
+        <Routes>
+          <Route path="/" element={<Login />} />
+          <Login className="login-wrapper" />
+          <Route path="/calendar" element={<Calendar />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 

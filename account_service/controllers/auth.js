@@ -18,6 +18,7 @@ const login = async (req, res, next) => {
             success: true,
             token: tokenObject.token,
             expiresIn: tokenObject.expires,
+            name: user.name,
           });
         }
         return next({ status: 401, msg: 'you entered the wrong password' });
@@ -53,6 +54,7 @@ const getUser = (req, res, next) => {
     success: true,
     msg: 'You are successfully get your user informations!',
     user: {
+      // eslint-disable-next-line no-underscore-dangle
       _id: req.user._id,
       name: req.user.name,
       username: req.user.username,

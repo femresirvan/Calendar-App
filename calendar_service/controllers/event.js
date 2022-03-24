@@ -8,7 +8,7 @@ const createEvent = async (req, res, next) => {
         events: req.body.events,
       },
     };
-    const result = await User.updateOne(query, data);
+    const result = await User.findOneAndUpdate(query, data, { new: true });
     if (!result) return next({ msg: 'There is no event with the query.', status: 404 });
     if (result.modifiedCount === 0 && result.upsertedCount === 0 && result.matchedCount === 0) {
       return next({
@@ -20,6 +20,7 @@ const createEvent = async (req, res, next) => {
     return res.json({
       success: true,
       msg: 'The event has been created successfully',
+      result,
     });
   } catch (err) {
     next({ msg: err });

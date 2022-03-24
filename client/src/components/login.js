@@ -28,7 +28,7 @@ const login = () => {
 
     axios({
       method: "post",
-      url: "http://localhost:3000/auth/login",
+      url: "http://localhost:3002/auth/login",
       headers: { "content-type": "application/json" },
       data: { username: user.username, password: user.password },
     })
@@ -40,8 +40,7 @@ const login = () => {
         }));
         console.log(response);
         // return <Navigate to="/calendar" />;
-
-        navigate("/calendar");
+        navigate(`/calendar/${response.data.token}`);
       })
       .catch((err) => {
         console.log(err);
@@ -72,7 +71,7 @@ const login = () => {
             onChange={handleChange}
           />
         </div>
-        <button>Login!</button>
+        <button className="btn-classic">Login!</button>
       </form>
     </div>
   );

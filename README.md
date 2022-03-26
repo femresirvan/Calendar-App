@@ -184,7 +184,7 @@ GOOGLE_SECRET="NOT COMPLETED"
 	 "events":{
 		 "desc":"Title",
 		 "extra_desc":"Description",
-     "date_year":2022,
+     		 "date_year":2022,
 		 "date_day":26,
 		 "date_month":3
 	         }
@@ -197,7 +197,7 @@ GOOGLE_SECRET="NOT COMPLETED"
 	  "events":{
 		  "desc":"Title",
 		  "extra_desc":"Description",
-      "date_year":2022,
+      		  "date_year":2022,
 		  "date_day":26,
 		  "date_month":3
 	          }

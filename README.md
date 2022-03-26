@@ -39,9 +39,41 @@ Calendar app that allows you add,update or delete new things(events) by dates.
 
 ### 🛣️ Roadmap
 
-- Coming...
+- [x] Research requierements, Create MERN stack, some github docs, diagrams.
+- [x] Develop node.js template for all microservices.
+- [x] Develop account api service.
+- [x] Develop Web api and use `--axios` (HTTP request) to communicate between client and account service.
+- [x] Develop Calendar Api Service and implement with Web API.
+- [x] Use react to develop the interface.
+- [x] Best part! style with sass.
+- [ ] Use redis to logout.
+- [ ] Use docker.
+- [ ] Use swagger to present the api.
+- [ ] Do some integration/unit tests.
+- [ ] Clean react codes or rewrite the whole react layout.
 
 ### 🏢 Project Structure
+
+** For Node.js**
+
+| Directory                | Explanation                                                                                |
+| ------------------------ | ------------------------------------------------------------------------------------------ |
+| ➥ ~../service_name       | Service files (Account service, Calendar service, Web API Service)                         |
+| ➥ ~./configs             | Config files for node.js server (mongodb driver configs, server conn configs etc.)         |
+| ➥ ~./middlewares         | Middleware files.                                                                          |
+| ➥ ~./controllers         | MVC                                                                                        |
+| ➥ ~./models              | MVC                                                                                        |
+| ➥ ~./routers             | Makes routing to middlewares and (/or) controllers.                                        |
+| ➥ ~./utils               | Utility functions, classes etc. (JWT functions, time functions, helper array functions...) |
+| ➥ ~./app.js              | Main server file.                                                                          |
+| ➥ ~./generate_keypair.js | generates keypair for jwt.                                                                 |
+
+**For React**
+
+| Directory           | Explanation                                    |
+| ------------------- | ---------------------------------------------- |
+| ➥ ~./src/components | Includes dumb and functional react components. |
+| ➥ ~./src/styles     | SCSS files for every components                |
 
 ### Dependencies
 
@@ -50,18 +82,41 @@ Calendar app that allows you add,update or delete new things(events) by dates.
 - Express & Passport
 - Docker
 - React
+- Redis
 - Jest
+- Eslint
+- Prettier
 
 **For React**
 
+- sass
+- react-calendar
+- axios
+
 **For Node.js**
+
+- axios
+- joi
+- mongoose
+- helmet
+- chalk
+- morgan
+- jsonwebtoken
+- passport.js
+- express
+- dotenv
+- cors
+- swaggerui
+- redis
+- crypto
+- bcrypt
+- yamljs
 
 ### 👀 Review
 
 ## Prerequisite
 
 - [Node.js & NPM](https://nodejs.org/en/download/)
-<!-- - [Google OAuth API Key](https://developers.google.com/identity/protocols/oauth2) -->
 - [MongoDB](https://www.mongodb.com/)
 
 ### 👨‍💻 Installation
@@ -92,7 +147,7 @@ GOOGLE_SECRET="NOT COMPLETED"
 
 ### Some Notes:
 
-- Due to develop in a short time, i couldn't make most of spesific diagrams (ER, Activity, Sequence..), test cases etc. Sorry for that, you can pull request also! 
+- Due to develop in a short time, i couldn't make most of spesific diagrams (ER, Activity, Sequence..), test cases etc. Sorry for that, you can pull request also!
 
 ### 🤝 Contributes&Donates
 

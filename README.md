@@ -34,7 +34,9 @@ Calendar app that allows you add,update or delete new things(events) by dates.
 - User system with JWT.
 - Time service that allows see you what time is it?
 - You can see the whole years in calendar(table) and you can use CRUD operations to your calendar events.
-- Not normalized mongodb user database includes users and calendar events.
+- Denormalized mongodb user database includes users and calendar events.
+- Logout and blacklist the JWT token with redis.
+- Easy integration with Docker.
 - Unit, integration test cases with Jest.
 
 ### Diagrams
@@ -148,6 +150,64 @@ MONGODB_URI="NOT COMPLETED"
 GOOGLE_ID="NOT COMPLETED"
 GOOGLE_SECRET="NOT COMPLETED"
 ```
+
+### Web API Routes
+
+#### **Auth**
+
+- POST /auth/login (to login)
+  ```json
+  "Headers": { "Content-type" : "application/json" },
+  "Body": { "username": "femresirvan", "password": "147852369Fee" }
+  ```
+- POST /auth/register (to register)
+  ```json
+  "Headers": { "Content-type" : "application/json" },
+  "Body": { "name": "Fırat Emre ŞİRVAN", "username": "femresirvan", "password": "147852369Fee" }
+  ```
+- GET /auth/logout (to logout) /*TODO*/
+  /* you can detect user with specific token. Token stores encrypted user id data. */
+  ```json
+  "Headers": { "Authorization": "Bearer <token>" }
+  ```
+  
+#### **API**
+
+- GET /api/events (to get events on spesific user)
+  ```json
+  "Headers": { "Authorization": "Bearer <token>" }
+  ```
+- POST /api/events (to create event on spesific user)
+  ```json
+  "Headers": { "Authorization": "Bearer <token>", "Content-type": "application/json" }
+  "Body" : {
+	 "events":{
+		 "desc":"Title",
+		 "extra_desc":"Description",
+     "date_year":2022,
+		 "date_day":26,
+		 "date_month":3
+	         }
+         }
+  ```
+- PUT /api/events/:eventid (to update events on spesific user) /*TODO*/
+  ```json
+  "Headers": { "Authorization": "Bearer <token>", "Content-type": "application/json"}
+  "Body" : {
+	  "events":{
+		  "desc":"Title",
+		  "extra_desc":"Description",
+      "date_year":2022,
+		  "date_day":26,
+		  "date_month":3
+	          }
+          }
+  ```
+- DELETE /api/events/:eventid (to get events on spesific user)
+  ```json
+  "Headers": { "Authorization": "Bearer <token>" }
+  ```
+
 
 ### Some Notes:
 

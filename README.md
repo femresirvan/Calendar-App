@@ -43,6 +43,8 @@ Calendar app that allows you add,update or delete new things(events) by dates.
 
 ![seq_general](https://user-images.githubusercontent.com/60824063/160240053-7bad826a-bd7d-4f86-8431-754ad0850b39.jpg)
 
+![state_web_api](https://user-images.githubusercontent.com/60824063/160241936-617687e6-9ef1-4e22-88f5-0b2f75d319b9.jpg)
+
 ### 🛣️ Roadmap
 
 - [x] Research requierements, Create MERN stack, some github docs, diagrams.

@@ -211,7 +211,7 @@ GOOGLE_SECRET="NOT COMPLETED"
 
 ### Some Notes:
 
-- Due to develop in a short time, i couldn't make most of spesific diagrams (ER, Activity, Sequence..), test cases etc. Sorry for that, you can pull request also!
+- Due to develop in a short time, i couldn't make most of spesific diagrams (ER, Activity, Sequence..), test cases, very bad react code include so much antipatterns etc. Sorry for that, you can pull request also!
 
 ### 🤝 Contributes&Donates
 

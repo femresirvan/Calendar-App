@@ -37,6 +37,10 @@ Calendar app that allows you add,update or delete new things(events) by dates.
 - Not normalized mongodb user database includes users and calendar events.
 - Unit, integration test cases with Jest.
 
+### Diagrams
+
+![seq_general](https://user-images.githubusercontent.com/60824063/160240053-7bad826a-bd7d-4f86-8431-754ad0850b39.jpg)
+
 ### 🛣️ Roadmap
 
 - [x] Research requierements, Create MERN stack, some github docs, diagrams.

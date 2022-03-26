@@ -41,7 +41,7 @@ Calendar app that allows you add,update or delete new things(events) by dates.
 
 ### 👀 Review
 
-https://user-images.githubusercontent.com/60824063/160243391-6fae1189-6798-4d34-84c2-f05c45e408ef.mp4
+https://user-images.githubusercontent.com/60824063/160243457-59040d9a-eeb2-48cb-984d-8d303376fa43.mp4
 
 ### Diagrams
 

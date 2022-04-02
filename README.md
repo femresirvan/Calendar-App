@@ -1,5 +1,7 @@
 # Calendar-App
 
+Kartaca Özel Anahtar Kodu: mGGGGGHoSK3ae4TbnD82AIzadqYzF-AjyLqfyZopl0szE_CZHq0S3bYHlOeHbY9FPXyLaQbRBydQ4JBtD6Ueg-PATBFqV7c0E9trlzJL_NQZP6WPDgRGQSQB76g6mqQlI7L5dgfQ1aSeHlQ-PUD4suEkQXFPGWOOxArUCEjY8Mg4CGBlR9UUu5tWwXnlepa3D9amecMcwbZRevbFS-H2PORFiPfJlouXbOUscxOAij3R2mhkqiOaaK4=
+
 _Be aware of that is incomplete documentation!_
 
 ![](https://img.shields.io/badge/Under%20Development!-red.svg)

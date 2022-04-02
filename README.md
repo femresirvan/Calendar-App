@@ -61,7 +61,7 @@ https://user-images.githubusercontent.com/60824063/160243457-59040d9a-eeb2-48cb-
 - [ ] Use redis to logout.
 - [ ] Use docker.
 - [ ] Use swagger to present the api.
-- [ ] Do some integration/unit tests.
+- [ ] Do some integration/unit tests with Jest.
 - [ ] Clean react codes or rewrite the whole react layout.
 
 ### 🏢 Project Structure
@@ -169,12 +169,12 @@ GOOGLE_SECRET="NOT COMPLETED"
   "Headers": { "Content-type" : "application/json" },
   "Body": { "name": "Fırat Emre ŞİRVAN", "username": "femresirvan", "password": "147852369Fee" }
   ```
-- GET /auth/logout (to logout) /*TODO*/
-  /* you can detect user with specific token. Token stores encrypted user id data. */
+- GET /auth/logout (to logout) /_TODO_/
+  /_ you can detect user with specific token. Token stores encrypted user id data. _/
   ```json
   "Headers": { "Authorization": "Bearer <token>" }
   ```
-  
+
 #### **API**
 
 - GET /api/events (to get events on spesific user)
@@ -185,33 +185,32 @@ GOOGLE_SECRET="NOT COMPLETED"
   ```json
   "Headers": { "Authorization": "Bearer <token>", "Content-type": "application/json" }
   "Body" : {
-	 "events":{
-		 "desc":"Title",
-		 "extra_desc":"Description",
+   "events":{
+  	 "desc":"Title",
+  	 "extra_desc":"Description",
      		 "date_year":2022,
-		 "date_day":26,
-		 "date_month":3
-	         }
+  	 "date_day":26,
+  	 "date_month":3
+           }
          }
   ```
-- PUT /api/events/:eventid (to update events on spesific user) /*TODO*/
+- PUT /api/events/:eventid (to update events on spesific user) /_TODO_/
   ```json
   "Headers": { "Authorization": "Bearer <token>", "Content-type": "application/json"}
   "Body" : {
-	  "events":{
-		  "desc":"Title",
-		  "extra_desc":"Description",
+    "events":{
+  	  "desc":"Title",
+  	  "extra_desc":"Description",
       		  "date_year":2022,
-		  "date_day":26,
-		  "date_month":3
-	          }
+  	  "date_day":26,
+  	  "date_month":3
+            }
           }
   ```
 - DELETE /api/events/:eventid (to get events on spesific user)
   ```json
   "Headers": { "Authorization": "Bearer <token>" }
   ```
-
 
 ### Some Notes:
 

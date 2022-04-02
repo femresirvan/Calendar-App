@@ -2,7 +2,7 @@ const axios = require('axios');
 
 const isAuthenticated = (req, res, next) => {
   axios
-    .get('http://localhost:3000/api/users/me', {
+    .get('http://account_service:3000/api/users/me', {
       headers: {
         Authorization: req.headers.authorization,
       },

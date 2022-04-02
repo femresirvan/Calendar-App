@@ -58,8 +58,10 @@ https://user-images.githubusercontent.com/60824063/160243457-59040d9a-eeb2-48cb-
 - [x] Develop Calendar Api Service and implement with Web API.
 - [x] Use react to develop the interface.
 - [x] Best part! style with sass.
+- [x] Use docker.
+- [ ] Register client part.
+- [ ] Make error states.
 - [ ] Use redis to logout.
-- [ ] Use docker.
 - [ ] Use swagger to present the api.
 - [ ] Do some integration/unit tests with Jest.
 - [ ] Clean react codes or rewrite the whole react layout.
@@ -138,21 +140,10 @@ $ git clone reaplace it
 $ cd replace it
 ```
 
-Install dependencies
+Setup with docker
 
 ```bash
-$ npm i
-```
-
-Configure .env
-
-```bash
-➥ ~./env
-PORT=PORT_NUMBER
-NODE_ENV='dev' #Not prepared yet.
-MONGODB_URI="NOT COMPLETED"
-GOOGLE_ID="NOT COMPLETED"
-GOOGLE_SECRET="NOT COMPLETED"
+$ sudo docker-compose up --build
 ```
 
 ### Web API Routes

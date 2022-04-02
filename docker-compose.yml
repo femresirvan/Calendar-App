@@ -1,0 +1,38 @@
+version: '3'
+services:
+  account_service:
+    # restart: always
+    build: ./account_service
+    ports:
+      - 3000:3000
+    environment:
+      - MONGODB_CONN_STRING=mongodb://mongo:27017/calendar-app
+      - PORT=3000
+  calendar_service:
+    # restart: always
+    build: ./calendar_service
+    ports:
+      - 3001:3001
+    environment:
+      - MONGODB_CONN_STRING=mongodb://mongo:27017/calendar-app
+      # - PORT=3001
+  web_api_service:
+    # restart: always
+    build: ./web_api_service
+    ports:
+      - 3002:3002
+    environment:
+      - PORT=3002
+  client:
+    # restart: always
+    build: ./client
+    ports:
+      - 3003:3003
+  mongo:
+    image: mongo
+    ports:
+      - 27017:27017
+    volumes:
+      - mongodb:/data/db
+volumes:
+  mongodb:

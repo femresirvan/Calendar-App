@@ -4,7 +4,7 @@ const login = async (req, res, next) => {
   axios({
     method: 'post',
     headers: { 'content-type': 'application/json' },
-    url: `http://localhost:3000/auth/login/`,
+    url: `http://account_service:3000/auth/login/`,
     data: req.body,
   })
     .then((response) => {
@@ -18,7 +18,7 @@ const register = async (req, res, next) => {
   axios({
     method: 'post',
     headers: { 'content-type': 'application/json' },
-    url: `http://localhost:3000/auth/register`,
+    url: `http://account_service:3000/auth/register`,
     data: req.body,
   })
     .then((response) => {

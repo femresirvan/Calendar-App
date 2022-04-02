@@ -70,7 +70,7 @@ https://user-images.githubusercontent.com/60824063/160243457-59040d9a-eeb2-48cb-
 
 ### 🏢 Project Structure
 
-** For Node.js**
+**For Node.js**
 
 | Directory                | Explanation                                                                                |
 | ------------------------ | ------------------------------------------------------------------------------------------ |
@@ -139,8 +139,8 @@ https://user-images.githubusercontent.com/60824063/160243457-59040d9a-eeb2-48cb-
 Clone repository
 
 ```bash
-$ git clone reaplace it
-$ cd replace it
+$ git clone https://github.com/femresirvan/Calendar-App.git
+$ cd Calendar-App
 ```
 
 Setup with docker

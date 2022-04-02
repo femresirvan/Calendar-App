@@ -130,6 +130,7 @@ https://user-images.githubusercontent.com/60824063/160243457-59040d9a-eeb2-48cb-
 
 - [Node.js & NPM](https://nodejs.org/en/download/)
 - [MongoDB](https://www.mongodb.com/)
+- [Docker & Docker-Compose]()
 
 ### 👨‍💻 Installation
 

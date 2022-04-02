@@ -2,10 +2,8 @@ import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
-const login = () => {
+const register = () => {
   const navigate = useNavigate();
-  // const userRef = useRef();
-  // const errRef = useRef();
 
   const [user, setUser] = useState({
     token: "",
@@ -28,9 +26,13 @@ const login = () => {
 
     axios({
       method: "post",
-      url: "http://localhost:3002/auth/login",
+      url: "http://localhost:3002/auth/register",
       headers: { "content-type": "application/json" },
-      data: { username: user.username, password: user.password },
+      data: {
+        username: user.username,
+        password: user.password,
+        name: user.name,
+      },
     })
       .then((response) => {
         setUser((prevState) => ({
@@ -43,7 +45,7 @@ const login = () => {
         navigate(`/calendar/${response.data.token}`);
       })
       .catch((err) => {
-        alert("Error while login. Try again...");
+        alert("Error while registering. Try again...");
       });
   };
 
@@ -51,6 +53,16 @@ const login = () => {
     <div className="login">
       <h2>Calendar App</h2>
       <form onSubmit={handleSubmit}>
+        <div className="input">
+          <input
+            type="text"
+            required
+            value={user.name}
+            name="name"
+            placeholder="Name"
+            onChange={handleChange}
+          />
+        </div>
         <div className="input">
           <input
             type="text"
@@ -71,13 +83,13 @@ const login = () => {
             onChange={handleChange}
           />
         </div>
-        <button className="btn-classic">Login</button>
+        <button className="btn-classic">Register</button>
         <div className="link">
-          <a href="/register">Go to register</a>
+          <a href="/">Return to login</a>
         </div>
       </form>
     </div>
   );
 };
 
-export default login;
+export default register;

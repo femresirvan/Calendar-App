@@ -60,7 +60,7 @@ const event = ({ closeEvent, date, selectedEvents, getAgain, token }) => {
         // setEvents([...response.data.result.events]);
       })
       .catch((err) => {
-        console.log(err);
+        alert("Error while setEvent. Try again...");
       });
   };
 

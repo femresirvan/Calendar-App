@@ -20,7 +20,7 @@ const events_list = ({ myKey, event, token, onDelete }) => {
         onDelete(event._id);
       })
       .catch((err) => {
-        console.log(err);
+        alert("Error while deleting. Try again...");
       });
   };
 

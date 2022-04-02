@@ -71,7 +71,7 @@ const calendar = () => {
         setSelectedEvents(temporaryArray);
       })
       .catch((err) => {
-        console.log(err);
+        alert("Error while getting calendar service. Try again...");
       });
   };
   return (

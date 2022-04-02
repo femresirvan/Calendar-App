@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Calendar from "react-calendar";
 import { useParams } from "react-router-dom";
 import Event from "./event";
 import axios from "axios";
 
 const calendar = () => {
+  const navigate = useNavigate();
   const { token } = useParams();
   const [date, setDate] = useState(new Date());
   const [eventOpen, setEventOpen] = useState(false);
@@ -76,6 +78,15 @@ const calendar = () => {
   };
   return (
     <div>
+      <div className="logout">
+        <button
+          onClick={() => {
+            navigate("/");
+          }}
+        >
+          Logout
+        </button>
+      </div>
       <Calendar onChange={onChange} value={date} />
       {eventOpen ? (
         <Event

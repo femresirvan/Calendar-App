@@ -59,7 +59,9 @@ https://user-images.githubusercontent.com/60824063/160243457-59040d9a-eeb2-48cb-
 - [x] Use react to develop the interface.
 - [x] Best part! style with sass.
 - [x] Use docker.
-- [ ] Register client part.
+- [ ] Request validation with Joi
+- [x] Register client part.
+- [x] Visual Logout on only frontend.
 - [ ] Make error states.
 - [ ] Use redis to logout.
 - [ ] Use swagger to present the api.

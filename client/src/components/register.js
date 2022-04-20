@@ -6,7 +6,6 @@ const register = () => {
   const navigate = useNavigate();
 
   const [user, setUser] = useState({
-    token: "",
     name: "",
     username: "",
     password: "",
@@ -27,6 +26,7 @@ const register = () => {
     axios({
       method: "post",
       url: "http://localhost:3002/auth/register",
+      withCredentials: true,
       headers: { "content-type": "application/json" },
       data: {
         username: user.username,
@@ -37,12 +37,11 @@ const register = () => {
       .then((response) => {
         setUser((prevState) => ({
           ...prevState,
-          token: response.data.token,
           name: response.data.name,
         }));
         console.log(response);
         // return <Navigate to="/calendar" />;
-        navigate(`/calendar/${response.data.token}`);
+        navigate(`/calendar`);
       })
       .catch((err) => {
         alert("Error while registering. Try again...");

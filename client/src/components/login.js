@@ -4,11 +4,8 @@ import { useNavigate } from "react-router-dom";
 
 const login = () => {
   const navigate = useNavigate();
-  // const userRef = useRef();
-  // const errRef = useRef();
 
   const [user, setUser] = useState({
-    token: "",
     name: "",
     username: "",
     password: "",
@@ -29,18 +26,18 @@ const login = () => {
     axios({
       method: "post",
       url: "http://localhost:3002/auth/login",
-      headers: { "content-type": "application/json" },
+      withCredentials: true,
+      // headers: { "content-type": "application/json" },
       data: { username: user.username, password: user.password },
     })
       .then((response) => {
         setUser((prevState) => ({
           ...prevState,
-          token: response.data.token,
           name: response.data.name,
         }));
         console.log(response);
         // return <Navigate to="/calendar" />;
-        navigate(`/calendar/${response.data.token}`);
+        navigate(`/calendar`);
       })
       .catch((err) => {
         alert("Error while login. Try again...");

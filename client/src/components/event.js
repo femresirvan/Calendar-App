@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import Events_list from "./events_list";
 import axios from "axios";
-const event = ({ closeEvent, date, selectedEvents, getAgain, token }) => {
+const event = ({ closeEvent, date, selectedEvents, getAgain }) => {
   const modal = useRef(null);
   const [event, setEvent] = useState({
     desc: "",
@@ -32,7 +32,8 @@ const event = ({ closeEvent, date, selectedEvents, getAgain, token }) => {
     axios({
       method: "post",
       url: "http://localhost:3002/api/events",
-      headers: { "content-type": "application/json", Authorization: token },
+      withCredentials: true,
+      headers: { "content-type": "application/json" },
       data: {
         events: {
           desc: event.desc,
@@ -116,7 +117,6 @@ const event = ({ closeEvent, date, selectedEvents, getAgain, token }) => {
             <Events_list
               key={index}
               event={item}
-              token={token}
               getAgain={getAgain}
               onDelete={handleDelete}
               myKey={index}

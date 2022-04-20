@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrashCan } from "@fortawesome/free-solid-svg-icons";
 import axios from "axios";
 
-const events_list = ({ myKey, event, token, onDelete }) => {
+const events_list = ({ myKey, event, onDelete }) => {
   const handleTrashButton = () => {
     /**
      * TODO
@@ -13,8 +13,8 @@ const events_list = ({ myKey, event, token, onDelete }) => {
 
     axios({
       method: "delete",
-      headers: { Authorization: token },
       url: `http://localhost:3002/api/events/${event._id}`,
+      withCredentials: true,
     })
       .then((response) => {
         onDelete(event._id);

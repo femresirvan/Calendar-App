@@ -10,7 +10,7 @@ function App() {
       <div className="hero">
         <Routes>
           <Route path="/" element={<Login className="login-wrapper" />} />
-          <Route path="/calendar/:token" element={<Calendar />} />
+          <Route path="/calendar" element={<Calendar />} />
           <Route path="/register" element={<Register />} />
         </Routes>
       </div>

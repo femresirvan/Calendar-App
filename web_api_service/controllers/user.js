@@ -11,7 +11,7 @@ const login = async (req, res, next) => {
       res
         .cookie('jwt', response.data.token, {
           httpOnly: true,
-          secure: false,
+          secure: true,
           maxAge: 1000 * 60 * 60 * 23,
         })
         .json(response.data);

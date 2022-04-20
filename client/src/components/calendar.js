@@ -7,7 +7,6 @@ import axios from "axios";
 
 const calendar = () => {
   const navigate = useNavigate();
-  const { token } = useParams();
   const [date, setDate] = useState(new Date());
   const [eventOpen, setEventOpen] = useState(false);
   const [events, setEvents] = useState([
@@ -25,8 +24,8 @@ const calendar = () => {
   useEffect(() => {
     axios({
       method: "get",
-      headers: { Authorization: token },
       url: "http://localhost:3002/api/events",
+      withCredentials: true,
     })
       .then((response) => {
         setEvents([...response.data.data]);
@@ -56,8 +55,8 @@ const calendar = () => {
   const getAgain = () => {
     axios({
       method: "get",
-      headers: { Authorization: token },
       url: "http://localhost:3002/api/events",
+      withCredentials: true,
     })
       .then((response) => {
         setEvents([...response.data.data]);
@@ -94,7 +93,6 @@ const calendar = () => {
           date={date}
           selectedEvents={selectedEvents}
           getAgain={getAgain}
-          token={token}
         />
       ) : null}
     </div>

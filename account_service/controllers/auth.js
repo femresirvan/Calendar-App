@@ -14,9 +14,10 @@ const login = async (req, res, next) => {
         }
         if (isMatch) {
           const tokenObject = issueJWT(user);
+          const tokenWithoutBearer = tokenObject.token.substring(7);
           return res.status(200).json({
             success: true,
-            token: tokenObject.token,
+            token: tokenWithoutBearer,
             expiresIn: tokenObject.expires,
             name: user.name,
           });

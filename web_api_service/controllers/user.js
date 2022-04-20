@@ -8,7 +8,13 @@ const login = async (req, res, next) => {
     data: req.body,
   })
     .then((response) => {
-      res.json(response.data);
+      res
+        .cookie('jwt', response.data.token, {
+          httpOnly: true,
+          secure: false,
+          maxAge: 1000 * 60 * 60 * 23,
+        })
+        .json(response.data);
     })
     .catch((err) => {
       next({ msg: err });

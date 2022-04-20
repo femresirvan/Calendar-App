@@ -19,7 +19,7 @@ dotenv.config({
  * Create Express server.
  */
 const app = express();
-app.use(cors());
+app.use(cors({ origin: true, credentials: true }));
 
 /**
  * Express configuration.

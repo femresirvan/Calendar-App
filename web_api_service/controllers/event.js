@@ -5,7 +5,7 @@ const createEvent = async (req, res, next) => {
   axios({
     method: 'post',
     headers: { 'content-type': 'application/json' },
-    url: `http://calendar_service:3001/api/users/${req.user._id}/events/`,
+    url: `http://${process.env.CALENDAR_URL}:3001/api/users/${req.user._id}/events/`,
     data: req.body,
   })
     .then((response) => {
@@ -19,7 +19,7 @@ const createEvent = async (req, res, next) => {
 const getEvents = async (req, res, next) => {
   axios({
     method: 'get',
-    url: `http://calendar_service:3001/api/users/${req.user._id}/events/`,
+    url: `http://${process.env.CALENDAR_URL}:3001/api/users/${req.user._id}/events/`,
   })
     .then((response) => {
       res.json(response.data);
@@ -34,7 +34,7 @@ const updateEvent = async (req, res, next) => {};
 const deleteEvent = async (req, res, next) => {
   axios({
     method: 'delete',
-    url: `http://calendar_service:3001/api/users/${req.user._id}/events/${req.params.eventId}`,
+    url: `http://${process.env.CALENDAR_URL}:3001/api/users/${req.user._id}/events/${req.params.eventId}`,
   })
     .then((response) => {
       res.json(response.data);

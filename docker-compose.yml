@@ -23,6 +23,8 @@ services:
       - 3002:3002
     environment:
       - PORT=3002
+      - CALENDAR_URL=calendar_service
+      - ACCOUNT_URL=account_service
   client:
     # restart: always
     build: ./client

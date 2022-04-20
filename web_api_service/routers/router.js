@@ -21,5 +21,6 @@ router.put('/api/events', isAuthenticated, event.updateEvent);
 router.post('/auth/login', user.login);
 router.post('/auth/register', user.register);
 router.get('/auth/get-user', isAuthenticated, event.temporaryController);
+router.get('/auth/logout', isAuthenticated, user.logout);
 
 module.exports = router;

@@ -57,8 +57,6 @@ const event = ({ closeEvent, date, selectedEvents, getAgain }) => {
         });
 
         setEvents([...temporaryArray]);
-
-        // setEvents([...response.data.result.events]);
       })
       .catch((err) => {
         alert("Error while setEvent. Try again...");

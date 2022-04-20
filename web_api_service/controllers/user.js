@@ -35,7 +35,27 @@ const register = async (req, res, next) => {
     });
 };
 
+const logout = async (req, res, next) => {
+  try {
+    if (req.cookies.jwt) {
+      res.clearCookie('jwt').status(200).json({
+        success: true,
+        message: 'You have logged out successfully.',
+      });
+    } else {
+      next({
+        msg: 'Invalid jwt.',
+        status: 401,
+      });
+    }
+  } catch (err) {
+    console.err(err);
+    next({ msg: 'Server error!' });
+  }
+};
+
 module.exports = {
   login,
   register,
+  logout,
 };

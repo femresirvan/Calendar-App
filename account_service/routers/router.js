@@ -7,8 +7,7 @@ const router = express.Router();
 // User authentication
 router.post('/auth/login', login);
 router.post('/auth/register', register);
-router.get('auth/logout', logout);
+
 // User operations
 router.get('/api/users/me', passport.authenticate('jwt', { session: false }), getUser);
-
 module.exports = router;

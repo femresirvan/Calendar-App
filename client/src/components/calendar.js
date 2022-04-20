@@ -26,12 +26,14 @@ const calendar = () => {
       method: "get",
       url: "http://localhost:3002/api/events",
       withCredentials: true,
+      timeout: 1000,
     })
       .then((response) => {
         setEvents([...response.data.data]);
       })
       .catch((err) => {
-        console.log(err);
+        alert("You have to login.");
+        navigate("/");
       });
   }, []);
   const onChange = (date) => {
@@ -80,7 +82,17 @@ const calendar = () => {
       <div className="logout">
         <button
           onClick={() => {
-            navigate("/");
+            axios({
+              method: "get",
+              withCredentials: true,
+              url: `http://localhost:3002/auth/logout`,
+            })
+              .then((response) => {
+                navigate("/");
+              })
+              .catch((err) => {
+                alert("error while logging out");
+              });
           }}
         >
           Logout

@@ -64,12 +64,8 @@ const getUser = (req, res, next) => {
   });
 };
 
-// TODO
-const logout = (req, res, next) => {};
-
 module.exports = {
   login,
   register,
-  logout,
   getUser,
 };
